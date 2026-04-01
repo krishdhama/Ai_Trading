@@ -1,0 +1,109 @@
+/* Global styles with light/dark theme tokens. */
+:root {
+  color-scheme: light dark;
+  --bg: #f3efe6;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: #fffaf2;
+  --text: #1b1d22;
+  --muted: #5f6570;
+  --accent: #0e8b6f;
+  --accent-contrast: #f8fff8;
+  --border: rgba(27, 29, 34, 0.08);
+  --shadow: 0 18px 40px rgba(35, 28, 20, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101418;
+    --surface: rgba(20, 26, 30, 0.85);
+    --surface-strong: #161d22;
+    --text: #f2f4f7;
+    --muted: #a6b0bb;
+    --accent: #39b98e;
+    --accent-contrast: #081310;
+    --border: rgba(242, 244, 247, 0.08);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(14, 139, 111, 0.16), transparent 30%),
+    linear-gradient(135deg, var(--bg), #d8e8df 120%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  color: var(--accent-contrast);
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+}
+
+.app-shell {
+  padding: 1.5rem;
+}
+
+.topbar,
+.panel {
+  backdrop-filter: blur(10px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.topbar {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.page-container,
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.two-column {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.analytics-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.panel {
+  padding: 1rem 1.25rem;
+}
+
+.chart-placeholder {
+  align-items: center;
+  background: var(--surface-strong);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  display: flex;
+  height: 240px;
+  justify-content: center;
+}
+
+.badge {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  padding: 0.45rem 0.8rem;
+}
